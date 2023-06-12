@@ -53,7 +53,19 @@ Console Output while adding items to the cart.
 
 ![Screen_Shots_02.png](Screen_Shots%2FScreen_Shots_02.png)
 
-Web Page Rendering and adding items to the shopping Cart.
+Web Page Rendering while items haven't been added to the shopping Cart.
+
+![Screen_Shots_03.png](Screen_Shots%2FScreen_Shots_03.png)
+
+Web Page Rendering when each item has been added to the shopping Cart. Notice the number in stock are reduced for each item.
+
+![Screen_Shots_04.png](Screen_Shots%2FScreen_Shots_04.png)
+
+When an item in the shopping cart is selected, it drops down a description of the item's cost and when the description is selected it removes the item from the shopping cart and updates the stock again with the returned amount. Notice the stock for Apples is back to `10` and for Oranges it is `3`, and also the items and total in CheckOut have been updated as well.
+
+![Screen_Shots_05.png](Screen_Shots%2FScreen_Shots_05.png)
+
+Clicking on the "ReStock Products" button just resets all the items back in stock and any items in the shopping cart are removed.
 
 ![Screen_Shots_03.png](Screen_Shots%2FScreen_Shots_03.png)
 
