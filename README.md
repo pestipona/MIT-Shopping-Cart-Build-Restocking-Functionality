@@ -1,6 +1,24 @@
-# MIT Chopping Cart - Build Restocking Functionality:
+# MIT Shopping Cart - Build Restocking Functionality:
 
-##  Learning Outcome Addressed:
+## I. Description:
+
+This web application simulates an online shopping cart, and is built using React as its front-end framework and makes use of state management. The application provides a list of products, each accompanied by an "Add to Cart" button. When users select the button, the corresponding item is added to the shopping cart. Additionally, there is a "Restock Products" button, which, when clicked, retrieves items from the shopping cart and places them back into the stock.
+
+To handle data persistence and communication with the backend, the application makes API calls to a Strapi-powered backend database. The API calls enable retrieving product data, updating stock quantities, and managing the shopping cart state.
+
+By utilizing React's component-based architecture and state management capabilities, the application ensures efficient rendering and updates of the shopping cart. The combination of React, state management, and API calls to the Strapi backend database facilitates the online shopping cart simulation.
+
+## II. Future Additions:
+
+Currently, the web application just shows the restock feature of the shopping cart. But there is a lot of room for improvement which are the following planned future additions:
+
+* Display the current number of stock items for each product. 
+* Deduct the number of stock items when they are added into the cart.
+* Update the number of stock items when they are removed from the cart.
+* Prohibit the user from adding more items from the cart if it's past the number of items in stock.
+* Improve the overall user interface. 
+
+##  III. Learning Outcome Addressed:
 
 5. Integrate **Strapi** with a **React application**
 
@@ -21,13 +39,27 @@ Your task is to **implement** the **restock feature**. You should **add your cod
 * Make use of the `“doFetch” `function to **make a call** to the **API**.
 * Make use of `“setItems”` to **update** the **existing items**.
 
-## Submission Instructions:
+## IV. Submission Instructions:
 
 When you’re done, **push your work** to a **GitHub repository** titled `Shopping Cart` and **upload the link** to your `“cart.jsx.”` file.
 
 On the **next page**, you’ll **share a short video** showing how the **restocking feature** works in action.
 
-## License:
+## V. Application Screenshots:
+
+Backend Strapi Database
+
+![Screen_Shots_01.png](Screen_Shots%2FScreen_Shots_01.png)
+
+Console Output while adding items to the cart.
+
+![Screen_Shots_02.png](Screen_Shots%2FScreen_Shots_02.png)
+
+Web Page Rendering and adding items to the shopping Cart.
+
+![Screen_Shots_03.png](Screen_Shots%2FScreen_Shots_03.png)
+
+## VI. License:
 
 MIT License
 
