@@ -12,10 +12,8 @@ By utilizing React's component-based architecture and state management capabilit
 
 Currently, the web application just shows the restock feature of the shopping cart. But there is a lot of room for improvement which are the following planned future additions:
 
-* Display the current number of stock items for each product. 
-* Deduct the number of stock items when they are added into the cart.
-* Update the number of stock items when they are removed from the cart.
-* Prohibit the user from adding more items from the cart if it's past the number of items in stock.
+* Enhance feature of removing items form the cart.
+* Display items once in Checkout and just update the quantity.
 * Improve the overall user interface. 
 
 ##  III. Learning Outcome Addressed:
