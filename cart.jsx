@@ -93,9 +93,9 @@ const Products = (props) => {
 
   //  Fetch Data
   const { Fragment, useState, useEffect, useReducer } = React;
-  const [query, setQuery] = useState("http://localhost:1337/products");
+  const [query, setQuery] = useState("http://localhost:1337/api/products");
   const [{ data, isLoading, isError }, doFetch] = useDataApi(
-    "http://localhost:1337/products",
+    "http://localhost:1337/api/products",
     {
       data: [],
     }
@@ -122,21 +122,21 @@ const Products = (props) => {
     return (
       <li key={index}>
         <Image src={photos[index % 4]} width={70} roundedCircle></Image>
-        <Button variant="primary" size="large" class="my-button">
+        <Button variant="primary" size="large" className="my-button">
           {item.name} {`$${item.cost}`}
         </Button>
-        <input name={item.name} type="submit" value="Add to Cart" class="my-input" onClick={addToCart}></input>
+        <input name={item.name} type="submit" value="Add to Cart" className="my-input" onClick={addToCart}></input>
       </li>
     );
   });
   let cartList = cart.map((item, index) => {
     return (
-      <Accordion.Item key={1+index} eventKey={1 + index}>
+      <Accordion.Item key={1+index} eventkey={1 + index}>
       <Accordion.Header>
         {item.name}
       </Accordion.Header>
       <Accordion.Body onClick={() => deleteCartItem(index)}
-        eventKey={1 + index}>
+        eventkey={1 + index}>
         $ {item.cost} from {item.country}
       </Accordion.Body>
     </Accordion.Item>
