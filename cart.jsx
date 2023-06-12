@@ -1,10 +1,11 @@
 // simulate getting products from DataBase
 const products = [
-  { name: "Apples_:", country: "Italy", cost: 3, instock: 10 },
+  { name: "Apples:",  country: "Italy", cost: 3, instock: 10 },
   { name: "Oranges:", country: "Spain", cost: 4, instock: 3 },
-  { name: "Beans__:", country: "USA", cost: 2, instock: 5 },
-  { name: "Cabbage:", country: "USA", cost: 1, instock: 8 },
+  { name: "Beans:",   country: "USA",   cost: 2, instock: 5 },
+  { name: "Cabbage:", country: "USA",   cost: 1, instock: 8 },
 ];
+
 //=========Cart=============
 const Cart = (props) => {
   const { Card, Accordion, Button } = ReactBootstrap;
@@ -48,6 +49,7 @@ const useDataApi = (initialUrl, initialData) => {
   }, [url]);
   return [state, setUrl];
 };
+
 const dataFetchReducer = (state, action) => {
   switch (action.type) {
     case "FETCH_INIT":
@@ -88,6 +90,7 @@ const Products = (props) => {
     Image,
     Input,
   } = ReactBootstrap;
+
   //  Fetch Data
   const { Fragment, useState, useEffect, useReducer } = React;
   const [query, setQuery] = useState("http://localhost:1337/products");
@@ -119,10 +122,10 @@ const Products = (props) => {
     return (
       <li key={index}>
         <Image src={photos[index % 4]} width={70} roundedCircle></Image>
-        <Button variant="primary" size="large">
-          {item.name}:{item.cost}
+        <Button variant="primary" size="large" class="my-button">
+          {item.name} {`$${item.cost}`}
         </Button>
-        <input name={item.name} type="submit" onClick={addToCart}></input>
+        <input name={item.name} type="submit" value="Add to Cart" class="my-input" onClick={addToCart}></input>
       </li>
     );
   });
@@ -145,7 +148,7 @@ const Products = (props) => {
     let final = cart.map((item, index) => {
       return (
         <div key={index} index={index}>
-          {item.name}
+          {item.name} $ {item.cost}
         </div>
       );
     });
@@ -159,22 +162,30 @@ const Products = (props) => {
     console.log(`total updated to ${newTotal}`);
     return newTotal;
   };
+
   // TODO: implement the restockProducts function
-  const restockProducts = (url) => {};
+  const restockProducts = (url) => {
+    doFetch(url);
+    let newItems = data.map((item) => {
+      let { name, country, cost, instock } = item;
+      return { name, country, cost, instock };
+    });
+    setItems([...items, ...newItems]);
+  };
 
   return (
     <Container>
       <Row>
         <Col>
-          <h1>Product List</h1>
+          <h1>Product List:</h1>
           <ul style={{ listStyleType: "none" }}>{list}</ul>
         </Col>
         <Col>
-          <h1>Cart Contents</h1>
+          <h1>Cart Contents:</h1>
           <Accordion defaultActiveKey="0">{cartList}</Accordion>
         </Col>
         <Col>
-          <h1>CheckOut </h1>
+          <h1>CheckOut:</h1>
           <Button onClick={checkOut}>CheckOut $ {finalList().total}</Button>
           <div> {finalList().total > 0 && finalList().final} </div>
         </Col>
@@ -198,5 +209,6 @@ const Products = (props) => {
     </Container>
   );
 };
+
 // ========================================
 ReactDOM.render(<Products />, document.getElementById("root"));
